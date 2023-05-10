@@ -1,4 +1,5 @@
-## Installation [You don't have to read it, if you know how to set it up]
+## Installation 
+#### You don't have to read it, if you know how to set it up
 - First, open your command prompt or terminal
 - Install the 'discord.py' package by running the following command:
 ```
