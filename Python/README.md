@@ -17,3 +17,13 @@ Save the .env file.
 ```
 - Now You Can Run the Python file by running the command: `python THE-FILE-Name.py` in your terminal.
 
+## Update
+- Update V1.1
+
+Added Feature: 
+```
+Mute command: Allows muting members.
+Warn command: Allows warning members.
+Purge command: Allows bulk deletion of messages.
+Ping command: Provides a fun way to check latency.
+```
