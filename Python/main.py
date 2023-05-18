@@ -40,7 +40,46 @@ async def on_message(message):
         else:
             await message.channel.send('You do not have permission to ban members.')
 
-TOKEN = os.getenv('DISCORD_TOKEN') # get the bot token from environment variables
+    elif message.content.startswith('!mute'):
+        if message.author.guild_permissions.manage_roles:
+            if len(message.mentions) > 0:
+                member = message.mentions[0]
+                mute_role = discord.utils.get(message.guild.roles, name='Muted')
+                if mute_role is not None:
+                    await member.add_roles(mute_role)
+                    await message.channel.send(f'{member.display_name} has been muted.')
+                else:
+                    await message.channel.send('The "Muted" role does not exist. Please create it before using the mute command.')
+            else:
+                await message.channel.send('You must mention a user to mute.')
+        else:
+            await message.channel.send('You do not have permission to mute members.')
+
+    elif message.content.startswith('!warn'):
+        if message.author.guild_permissions.kick_members:
+            if len(message.mentions) > 0:
+                member = message.mentions[0]
+                # Implement your warning logic here
+                await message.channel.send(f'{member.display_name} has been warned.')
+            else:
+                await message.channel.send('You must mention a user to warn.')
+        else:
+            await message.channel.send('You do not have permission to warn members.')
+
+    elif message.content.startswith('!purge'):
+        if message.author.guild_permissions.manage_messages:
+            amount = int(message.content.split()[1]) + 1
+            if 0 < amount <= 100:
+                deleted = await message.channel.purge(limit=amount)
+                await message.channel.send(f'Successfully purged {len(deleted) - 1} messages.')
+            else:
+                await message.channel.send('Please provide a number between 1 and 100 for the amount of messages to purge.')
+        else:
+            await message.channel.send('You do not have permission to purge messages.')
+
+    elif message.content.startswith('!ping'):
+        await message.channel.send('Pong!')
+
+TOKEN = os.getenv('TOKEN') # get the bot token to the environment variables
 
 client.run(TOKEN) # start the bot with the token
-
