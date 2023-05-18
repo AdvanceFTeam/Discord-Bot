@@ -7,7 +7,7 @@
 pip install discord.py
 ```
 This will install the required package for creating a Discord bot with Python.
-- Add your bot token to the `.env` file to enable its functionality. If you are using Replit, you can store your Discord token in the System environment variables, naming it `TOKEN` and assigning your Discord token as its value.
+3. Add your bot token to the `.env` file to enable its functionality. If you are using Replit, you can store your Discord token in the System environment variables, naming it `TOKEN` and assigning your Discord token as its value.
 
 For the `.env` file setup:
 ```
@@ -16,7 +16,7 @@ For the `.env` file setup:
 - Replace YOUR_BOT_TOKEN with your actual bot token.
 - Save the .env file.
 ```
-- To run your bot, use the command python `THE-FILE-Name.py` in your terminal.
+4. To run your bot, use the command python `THE-FILE-Name.py` in your terminal.
 
 ## Update
 - Update V1.1
