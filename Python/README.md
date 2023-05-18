@@ -3,6 +3,7 @@
 
 1. Open your command prompt or terminal.
 2. Install the discord.py package by running the following command
+
 ```
 pip install discord.py
 ```
