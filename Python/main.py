@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 load_dotenv() # load environment variables from .env file
 
 intents = discord.Intents.default()
+intents.message_content = True
 intents.members = True
 
 client = discord.Client(intents=intents) # create a new Discord client
@@ -80,6 +81,6 @@ async def on_message(message):
     elif message.content.startswith('!ping'):
         await message.channel.send('Pong!')
 
-TOKEN = os.getenv('TOKEN') # get the bot token to the environment variables
+TOKEN = os.getenv('TOKEN') # Put your token in the .env file so the bot can run better and not have error.
 
 client.run(TOKEN) # start the bot with the token
