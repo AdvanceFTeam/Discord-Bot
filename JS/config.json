@@ -1,5 +1,5 @@
 {
-  "token": "Discord-Token-Here", // Your discord bot token
-  "prefix": "!", // Change Prefix to what you prefer
-  "bannedWords": ["badword1", "badword2", "etc"] // Ban words
+  "token": "Discord-Token-Here", 
+  "prefix": "!",
+  "bannedWords": ["badword1", "badword2", "etc"] 
 }
